@@ -14,7 +14,7 @@
       
 ## 均方差(mse)是计算回归问题的loss，交叉熵(cross entropy)是计算分类问题的loss
 
-##  方差，标准差，均方误差计算方法
+##  方差，标准差，均方误差计算方法，其中方差，标准差是计算数据距平均数的离散程度，均方误差计算数据距真实值的距离
 
       import numpy as np
 
@@ -28,4 +28,4 @@
       print(biaozhuncha)
 
       #3.平均平方误差(mse)
-      print((0.5 * np.sum((x - np.mean(x)) ** 2)))
+      print((0.5 * np.sum((x - np.array([90,80,70,80,80])) ** 2)))
