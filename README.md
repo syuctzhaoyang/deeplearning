@@ -47,7 +47,7 @@
 ##    softmax函数与交叉熵完整示例
 
       x = np.array([90,80,80,80,60])   # x 为计算出来的值
-      y = np.array([90,80,90,80,60])   # y 为真实值
+     y = np.array([1,0,1,0,0])   # y 为真实值，通常交叉熵(cross entropy)是计算分类问题，y通常为one-hot类型
       
       def softmax_function(x: float) -> float:
          return np.exp(x) / np.sum(np.exp(x))  
@@ -56,5 +56,5 @@
          delta = 1e-8
          return -np.sum(y * np.log(y_hat + delta))
          
-       print(cross_entropy_err(softmax_function(x), softmax_function(y)))
+       print(cross_entropy_err(softmax_function(x), y))
       
