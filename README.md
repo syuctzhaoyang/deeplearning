@@ -58,3 +58,12 @@
          
        print(cross_entropy_err(softmax_function(x), y))
       
+      import tensorflow as tf
+
+##  sparse_categorical_crossentropy计算稀疏分类交叉熵说明
+      #凡是有sparse字样的，y_true为标量，系统会自动转换成one-hot编码，y_pred为向量组合
+      # 0 <----> [0.9, 0.05, 0.05],前面的0表示序号为0的分类，后面数字是序号的softmax值
+      loss = tf.keras.losses.sparse_categorical_crossentropy(
+          y_true=tf.constant([0, 1, 2]),
+          y_pred=tf.constant([[0.9, 0.05, 0.05], [0.05, 0.89, 0.06], [0.05, 0.01, 0.94]]))
+      print('Loss: ', loss.numpy())
