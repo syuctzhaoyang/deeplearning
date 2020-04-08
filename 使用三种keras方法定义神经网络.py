@@ -85,3 +85,5 @@ learning_rate = 0.001
 data_loader = MNISTLoader()
 
 model.fit(data_loader.train_data, data_loader.train_label, epochs=num_epochs, batch_size=batch_size)
+
+print(model.evaluate(data_loader.test_data, data_loader.test_label))
