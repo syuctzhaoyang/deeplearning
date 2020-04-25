@@ -1,10 +1,10 @@
 # 导入数据集，参考https://devdocs.io/tensorflow~python/tf/keras/datasets/mnist/load_data
 # 拷贝返回值和函数体
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
-# 构建tf.data.Dataset，好处是能将图片与标签配对，以后交换训练顺序时，两两配对组不传位
+# 构建tf.data.Dataset，好处是能将图片与标签配对，以后交换训练顺序时，两两配对组不串位置
 train_db = tf.data.Dataset.from_tensor_slices((x_train, y_train))
 test_db = tf.data.Dataset.from_tensor_slices((x_test, y_test))
-# 创建映射函数，函数中将图片像素值归一化，将标签值做成onehot编码
+# 创建映射函数，函数中将图片像素值归一化，将标签值做成one-hot编码
 def preprocess(x,y):
     x = tf.cast(x,dtype=tf.float32)/255.
     y = tf.one_hot(y, depth=10)
