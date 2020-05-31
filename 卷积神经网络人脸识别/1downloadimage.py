@@ -8,7 +8,7 @@ import os
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'}
 
 #设置访问地址，word={idolname}&step_word={idolname}&pn={pages}为百度查找关键字，以及后续页数
-#注：百度图片30张为一页，pn=0为前30张，pn=0为第31张至第60张
+#注：百度图片30张为一页，pn=0为前30张，pn=1为第31张至第60张
 
 img_url = 'http://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&is=&fp=result&word={idolname}&step_word={idolname}&pn={pages}'
 
